@@ -1,0 +1,7 @@
+RECORD： 每处理完一条记录后提交。
+BATCH(默认)： 每次poll一批数据后提交一次，频率取决于每次poll的调用频率。
+TIME： 每次间隔ackTime的时间提交。
+COUNT： 处理完poll的一批数据后并且距离上次提交处理的记录数超过了设置的ackCount就提交。
+COUNT_TIME： TIME和COUNT中任意一条满足即提交。
+MANUAL： 手动调用Acknowledgment.acknowledge()后，并且处理完poll的这批数据后提交。
+MANUAL_IMMEDIATE： 手动调用Acknowledgment.acknowledge()后立即提交。

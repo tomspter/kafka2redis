@@ -1,0 +1,30 @@
+spring:
+  kafka:
+    bootstrap-servers:
+    consumer:
+      group-id:
+      auto-offset-reset: earliest
+      #手动为false
+
+      enable-auto-commit: true
+      auto-commit-interval: 100s #partation投放：hash(group_id)%50
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      topic: test
+    template:
+      default-topic:
+    listener:
+      concurrency: 3 #并发线程数,不超过topic分区数目
+      poll-timeout: 3000 #拉取超时时间
+#      ack-mode:
+
+
+  redis:
+    host:
+    port:
+    password:
+    jedis:
+      pool:
+        max-idle:
+        max-active:
+        max-wait:
+    timeout:
